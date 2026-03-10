@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graph>
+    <nodes>
+        <node id="ceo" name="👔 CEO"/>
+        <node id="cto" name="🖥️ CTO"/><node id="cfo" name="💵 CFO"/>
+        <node id="coo" name="⚙️ COO"/><node id="cmo" name="📢 CMO"/>
+        
+        <!-- Tech Division -->
+        <node id="eng" name=" Engineering"/><node id="data" name="📊 Data Science"/>
+        <node id="security" name="🔒 Security"/><node id="qa" name="✅ QA"/>
+        <node id="devops" name="🚀 DevOps"/>
+        
+        <!-- Finance Division -->
+        <node id="accounting" name="📑 Accounting"/><node id="treasury" name="🏦 Treasury"/>
+        <node id="audit" name="🔍 Audit"/><node id="tax" name="📋 Tax"/>
+        
+        <!-- Operations Division -->
+        <node id="hr" name="👨‍💼 HR"/><node id="legal" name="⚖️ Legal"/>
+        <node id="admin" name="🏢 Admin"/><node id="facilities" name="🔧 Facilities"/>
+        
+        <!-- Marketing Division -->
+        <node id="brand" name="🎨 Brand"/><node id="digital" name="📱 Digital"/>
+        <node id="pr" name="📰 PR"/><node id="growth" name="📈 Growth"/>
+        
+        <!-- Teams -->
+        <node id="team1" name="Team Alpha"/><node id="team2" name="Team Beta"/>
+        <node id="team3" name="Team Gamma"/><node id="team4" name="Team Delta"/>
+        <node id="team5" name="Team Epsilon"/>
+    </nodes>
+    <edges>
+        <!-- C-Level -->
+        <edge from="ceo" to="cto"/><edge from="ceo" to="cfo"/>
+        <edge from="ceo" to="coo"/><edge from="ceo" to="cmo"/>
+        
+        <!-- Tech -->
+        <edge from="cto" to="eng"/><edge from="cto" to="data"/>
+        <edge from="cto" to="security"/><edge from="cto" to="qa"/>
+        <edge from="cto" to="devops"/>
+        <edge from="eng" to="team1"/><edge from="eng" to="team2"/>
+        <edge from="data" to="team3"/>
+        
+        <!-- Finance -->
+        <edge from="cfo" to="accounting"/><edge from="cfo" to="treasury"/>
+        <edge from="cfo" to="audit"/><edge from="cfo" to="tax"/>
+        
+        <!-- Operations -->
+        <edge from="coo" to="hr"/><edge from="coo" to="legal"/>
+        <edge from="coo" to="admin"/><edge from="coo" to="facilities"/>
+        <edge from="hr" to="team4"/>
+        
+        <!-- Marketing -->
+        <edge from="cmo" to="brand"/><edge from="cmo" to="digital"/>
+        <edge from="cmo" to="pr"/><edge from="cmo" to="growth"/>
+        <edge from="digital" to="team5"/>
+        
+        <!-- Cross-functional -->
+        <edge from="security" to="team1"/><edge from="security" to="team2"/>
+        <edge from="devops" to="team1"/><edge from="devops" to="team2"/>
+        <edge from="devops" to="team3"/>
+        <edge from="qa" to="team1"/><edge from="qa" to="team2"/>
+        <edge from="qa" to="team3"/>
+        <edge from="growth" to="team5"/>
+        <edge from="data" to="growth"/>
+    </edges>
+</graph>

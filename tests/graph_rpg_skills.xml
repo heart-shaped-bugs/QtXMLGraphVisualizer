@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graph>
+    <nodes>
+        <node id="base" name="🎮 Character"/>
+        
+        <!-- Warrior Path -->
+        <node id="w1" name="⚔️ Sword"/>
+        <node id="w2" name=" Axe"/><node id="w3" name="🛡️ Shield"/>
+        <node id="w4" name="💪 Strength"/><node id="w5" name="🏃 Stamina"/>
+        <node id="w6" name="🔥 Berserk"/><node id="w7" name="👑 Warlord"/>
+        
+        <!-- Mage Path -->
+        <node id="m1" name="🔥 Fire"/>
+        <node id="m2" name="❄️ Ice"/><node id="m3" name="⚡ Lightning"/>
+        <node id="m4" name="📚 Wisdom"/><node id="m5" name="💫 Mana"/>
+        <node id="m6" name="🌟 Archmage"/><node id="m7" name="🔮 Time Magic"/>
+        
+        <!-- Rogue Path -->
+        <node id="r1" name="🗡️ Dagger"/>
+        <node id="r2" name="🏹 Bow"/><node id="r3" name="👤 Stealth"/>
+        <node id="r4" name="🎯 Precision"/><node id="r5" name="💨 Agility"/>
+        <node id="r6" name="💀 Assassin"/><node id="r7" name="🌑 Shadow"/>
+        
+        <!-- Hybrid -->
+        <node id="h1" name="⚖️ Balance"/>
+        <node id="h2" name="🌈 Multiclass"/><node id="h3" name="♾️ Ultimate"/>
+    </nodes>
+    <edges>
+        <!-- Base -->
+        <edge from="base" to="w1"/><edge from="base" to="m1"/><edge from="base" to="r1"/>
+        
+        <!-- Warrior -->
+        <edge from="w1" to="w2"/><edge from="w1" to="w3"/>
+        <edge from="w2" to="w4"/><edge from="w3" to="w5"/>
+        <edge from="w4" to="w6"/><edge from="w5" to="w6"/>
+        <edge from="w6" to="w7"/>
+        
+        <!-- Mage -->
+        <edge from="m1" to="m2"/><edge from="m1" to="m3"/>
+        <edge from="m2" to="m4"/><edge from="m3" to="m5"/>
+        <edge from="m4" to="m6"/><edge from="m5" to="m6"/>
+        <edge from="m6" to="m7"/>
+        
+        <!-- Rogue -->
+        <edge from="r1" to="r2"/><edge from="r1" to="r3"/>
+        <edge from="r2" to="r4"/><edge from="r3" to="r5"/>
+        <edge from="r4" to="r6"/><edge from="r5" to="r6"/>
+        <edge from="r6" to="r7"/>
+        
+        <!-- Hybrid (endgame) -->
+        <edge from="w7" to="h1"/><edge from="m7" to="h1"/>
+        <edge from="r7" to="h1"/><edge from="h1" to="h2"/>
+        <edge from="h2" to="h3"/>
+        
+        <!-- Cross-synergies -->
+        <edge from="w4" to="r5"/><edge from="m5" to="w5"/>
+        <edge from="r4" to="m4"/><edge from="w3" to="r3"/>
+    </edges>
+</graph>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graph>
+    <nodes>
+        <node id="lb" name="⚖️ Load Balancer"/>
+        <node id="api1" name="🔌 API Gateway"/><node id="api2" name="🔌 API Gateway-2"/>
+        <node id="auth" name="🔐 Auth Service"/><node id="user" name="👤 User Service"/>
+        <node id="order" name="📦 Order Service"/><node id="payment" name="💳 Payment Service"/>
+        <node id="inventory" name="📊 Inventory Service"/><node id="shipping" name="🚚 Shipping Service"/>
+        <node id="email" name="📧 Email Service"/><node id="notify" name="🔔 Notify Service"/>
+        <node id="cache" name="⚡ Redis Cache"/><node id="db1" name="🗄️ PostgreSQL"/>
+        <node id="db2" name="🗄️ MongoDB"/><node id="db3" name="🗄️ Redis DB"/>
+        <node id="mq" name="📨 RabbitMQ"/><node id="log" name="📝 Log Aggregator"/>
+        <node id="monitor" name="📈 Monitoring"/>
+    </nodes>
+    <edges>
+        <!-- Entry Point -->
+        <edge from="lb" to="api1"/><edge from="lb" to="api2"/>
+        <edge from="api1" to="auth"/><edge from="api2" to="auth"/>
+        
+        <!-- Core Services -->
+        <edge from="auth" to="user"/><edge from="user" to="order"/>
+        <edge from="order" to="payment"/><edge from="order" to="inventory"/>
+        <edge from="payment" to="shipping"/>
+        
+        <!-- Supporting Services -->
+        <edge from="user" to="email"/><edge from="order" to="notify"/>
+        <edge from="shipping" to="notify"/><edge from="payment" to="email"/>
+        
+        <!-- Infrastructure -->
+        <edge from="auth" to="cache"/><edge from="user" to="db1"/>
+        <edge from="order" to="db1"/><edge from="inventory" to="db2"/>
+        <edge from="cache" to="db3"/><edge from="api1" to="mq"/>
+        <edge from="api2" to="mq"/>
+        
+        <!-- Observability -->
+        <edge from="auth" to="log"/><edge from="user" to="log"/>
+        <edge from="order" to="log"/><edge from="payment" to="log"/>
+        <edge from="monitor" to="api1"/><edge from="monitor" to="api2"/>
+        <edge from="monitor" to="db1"/><edge from="monitor" to="mq"/>
+    </edges>
+</graph>

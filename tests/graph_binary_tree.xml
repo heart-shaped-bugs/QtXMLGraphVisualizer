@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graph>
+    <nodes>
+        <node id="1" name="Root"/>
+        <node id="2" name="Left-1"/>
+        <node id="3" name="Right-1"/>
+        <node id="4" name="Left-2-L"/>
+        <node id="5" name="Right-2-L"/>
+        <node id="6" name="Left-2-R"/>
+        <node id="7" name="Right-2-R"/>
+        <node id="8" name="Left-3-LL"/>
+        <node id="9" name="Right-3-LL"/>
+        <node id="10" name="Left-3-LR"/>
+        <node id="11" name="Right-3-LR"/>
+        <node id="12" name="Left-3-RL"/>
+        <node id="13" name="Right-3-RL"/>
+        <node id="14" name="Left-3-RR"/>
+        <node id="15" name="Right-3-RR"/>
+    </nodes>
+    <edges>
+        <edge from="1" to="2"/><edge from="1" to="3"/>
+        <edge from="2" to="4"/><edge from="2" to="5"/>
+        <edge from="3" to="6"/><edge from="3" to="7"/>
+        <edge from="4" to="8"/><edge from="4" to="9"/>
+        <edge from="5" to="10"/><edge from="5" to="11"/>
+        <edge from="6" to="12"/><edge from="6" to="13"/>
+        <edge from="7" to="14"/><edge from="7" to="15"/>
+    </edges>
+</graph>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graph>
+    <nodes>
+        <node id="1" name="Alice"/>
+        <node id="2" name="Bob"/>
+        <node id="3" name="Charlie"/>
+        <node id="4" name="Diana"/>
+        <node id="5" name="Eve"/>
+        <node id="6" name="Frank"/>
+        <node id="7" name="Grace"/>
+        <node id="8" name="Henry"/>
+        <node id="9" name="Ivy"/>
+        <node id="10" name="Jack"/>
+    </nodes>
+    <edges>
+        <edge from="1" to="2"/><edge from="1" to="3"/><edge from="1" to="5"/>
+        <edge from="2" to="4"/><edge from="2" to="5"/><edge from="2" to="6"/>
+        <edge from="3" to="4"/><edge from="3" to="7"/>
+        <edge from="4" to="5"/><edge from="4" to="8"/>
+        <edge from="5" to="6"/><edge from="5" to="9"/>
+        <edge from="6" to="7"/><edge from="6" to="10"/>
+        <edge from="7" to="8"/><edge from="7" to="9"/>
+        <edge from="8" to="9"/><edge from="8" to="10"/>
+        <edge from="9" to="10"/>
+        <edge from="1" to="10"/>
+        <edge from="3" to="6"/>
+    </edges>
+</graph>

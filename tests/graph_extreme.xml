@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graph>
+    <nodes>
+        <node id="1" name="Root"/>
+        <node id="2" name="Hub-A"/><node id="3" name="Hub-B"/><node id="4" name="Hub-C"/>
+        <node id="5" name="A1"/><node id="6" name="A2"/><node id="7" name="A3"/><node id="8" name="A4"/>
+        <node id="9" name="B1"/><node id="10" name="B2"/><node id="11" name="B3"/><node id="12" name="B4"/>
+        <node id="13" name="C1"/><node id="14" name="C2"/><node id="15" name="C3"/><node id="16" name="C4"/>
+        <node id="17" name="Leaf-A1"/><node id="18" name="Leaf-A2"/><node id="19" name="Leaf-A3"/>
+        <node id="20" name="Leaf-B1"/><node id="21" name="Leaf-B2"/><node id="22" name="Leaf-B3"/>
+        <node id="23" name="Leaf-C1"/><node id="24" name="Leaf-C2"/><node id="25" name="Leaf-C3"/>
+        <node id="26" name="Connector-1"/><node id="27" name="Connector-2"/><node id="28" name="Connector-3"/>
+        <node id="29" name="Bridge-X"/><node id="30" name="Bridge-Y"/>
+    </nodes>
+    <edges>
+        <!-- Root to Hubs -->
+        <edge from="1" to="2"/><edge from="1" to="3"/><edge from="1" to="4"/>
+        <!-- Hub A -->
+        <edge from="2" to="5"/><edge from="2" to="6"/><edge from="2" to="7"/><edge from="2" to="8"/>
+        <edge from="5" to="17"/><edge from="6" to="18"/><edge from="7" to="19"/>
+        <!-- Hub B -->
+        <edge from="3" to="9"/><edge from="3" to="10"/><edge from="3" to="11"/><edge from="3" to="12"/>
+        <edge from="9" to="20"/><edge from="10" to="21"/><edge from="11" to="22"/>
+        <!-- Hub C -->
+        <edge from="4" to="13"/><edge from="4" to="14"/><edge from="4" to="15"/><edge from="4" to="16"/>
+        <edge from="13" to="23"/><edge from="14" to="24"/><edge from="15" to="25"/>
+        <!-- Cross connections -->
+        <edge from="2" to="3"/><edge from="3" to="4"/><edge from="2" to="4"/>
+        <!-- Connectors -->
+        <edge from="5" to="26"/><edge from="9" to="26"/><edge from="13" to="26"/>
+        <edge from="6" to="27"/><edge from="10" to="27"/><edge from="14" to="27"/>
+        <edge from="7" to="28"/><edge from="11" to="28"/><edge from="15" to="28"/>
+        <!-- Bridges -->
+        <edge from="26" to="29"/><edge from="27" to="29"/><edge from="28" to="29"/>
+        <edge from="29" to="30"/>
+        <edge from="30" to="1"/>
+        <!-- Extra cycles -->
+        <edge from="17" to="20"/><edge from="20" to="23"/><edge from="23" to="17"/>
+        <edge from="18" to="21"/><edge from="21" to="24"/><edge from="24" to="18"/>
+    </edges>
+</graph>
