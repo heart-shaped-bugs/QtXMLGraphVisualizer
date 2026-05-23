@@ -77,7 +77,6 @@ void GraphWidget::positionNodes(const GraphData &graph) {
         horizontalOrder[firstId] = 0;
     }
 
-    // BFS с учётом порядка обхода
     while (!queue.isEmpty()) {
         QString currentId = queue.dequeue();
         int currentLevel = levels[currentId];
@@ -93,7 +92,6 @@ void GraphWidget::positionNodes(const GraphData &graph) {
         }
     }
 
-    // Обрабатываем изолированные узлы
     for (const QString &nodeId : graph.nodes.keys()) {
         if (!visited.contains(nodeId)) {
             levels[nodeId] = 0;
@@ -102,13 +100,11 @@ void GraphWidget::positionNodes(const GraphData &graph) {
         }
     }
 
-    // Группируем по уровням
     QMap<int, QList<QString>> levelNodes;
     for (const QString &nodeId : levels.keys()) {
         levelNodes[levels[nodeId]].append(nodeId);
     }
 
-    // Сортируем узлы на каждом уровне по порядку обхода
     for (int level : levelNodes.keys()) {
         std::sort(levelNodes[level].begin(), levelNodes[level].end(),
                   [&horizontalOrder](const QString &a, const QString &b) {
@@ -116,7 +112,6 @@ void GraphWidget::positionNodes(const GraphData &graph) {
                   });
     }
 
-    // Позиционируем с увеличенными отступами
     qreal verticalSpacing = 180;
     qreal horizontalSpacing = 250;
 

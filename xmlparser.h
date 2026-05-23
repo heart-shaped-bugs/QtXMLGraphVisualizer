@@ -8,12 +8,12 @@
 struct GraphNode {
     QString id;
     QString name;
-    QList<QString> connections;  // IDs connected nodes
+    QList<QString> connections;
 };
 
 struct GraphData {
     QMap<QString, GraphNode> nodes;
-    QList<QString> rootNodes;  // Nodes without incoming edges
+    QList<QString> rootNodes;
 };
 
 GraphData parseXmlGraph(const QString &filePath);

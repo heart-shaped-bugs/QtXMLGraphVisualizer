@@ -9,7 +9,7 @@ GraphData parseXmlGraph(const QString &filePath) {
 
     QFile file(filePath);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        qDebug() << "❌ Ошибка открытия файла:" << filePath;
+        qDebug() << "Ошибка открытия файла:" << filePath;
         return graph;
     }
 
@@ -38,7 +38,6 @@ GraphData parseXmlGraph(const QString &filePath) {
                 QString from = xml.attributes().value("from").toString();
                 QString to = xml.attributes().value("to").toString();
 
-                // Добавляем связь в обе стороны (неориентированный граф)
                 if (graph.nodes.contains(from)) {
                     graph.nodes[from].connections.append(to);
                 }
@@ -50,12 +49,11 @@ GraphData parseXmlGraph(const QString &filePath) {
     }
 
     if (xml.hasError()) {
-        qDebug() << "❌ Ошибка XML:" << xml.errorString();
+        qDebug() << "Ошибка XML:" << xml.errorString();
     }
 
     file.close();
 
-    // Находим корневые узлы (без входящих связей или первые в списке)
     QSet<QString> hasIncoming;
     for (const auto &node : graph.nodes) {
         for (const auto &conn : node.connections) {
@@ -69,7 +67,6 @@ GraphData parseXmlGraph(const QString &filePath) {
         }
     }
 
-    // Если все узлы имеют входящие связи (цикл), берём первый
     if (graph.rootNodes.isEmpty() && !graph.nodes.isEmpty()) {
         graph.rootNodes.append(graph.nodes.firstKey());
     }
